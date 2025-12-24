@@ -20,3 +20,8 @@ Our work proposes SABER-Net, a structure-aware and boundary-enhanced network des
     ```bash
     pip install -r requirements.txt
     ```
+4.  **Dataset Preparation:**
+    ```bash
+    1.HRSID: Please download the dataset from its official source [https://github.com/chaozhong2010/HRSID].
+    2.SSDD: Please download the dataset from its official source [https://github.com/TianwenZhang0825/Official-SSDD].
+    ```
