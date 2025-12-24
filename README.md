@@ -4,8 +4,18 @@
 
 Our work proposes SABER-Net, a structure-aware and boundary-enhanced network designed to address the challenges of ship detection in SAR images.
 
-## 1. Requirements
+1.  **Create a new virtual environment (recommended):**
+    ```bash
+    conda create -n myenv python=3.9.0
+    ```
 
-To install the necessary dependencies, please run the following command:
-```bash
-pip install -r requirements.txt
+2.  **Install PyTorch:**
+    Please install PyTorch first by following the official instructions from [pytorch.org](https://pytorch.org/) to match your specific hardware (CUDA version or CPU). For example, for CUDA 12.1, the command might be:
+    ```bash
+    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+    ```
+
+3.  **Install other dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
