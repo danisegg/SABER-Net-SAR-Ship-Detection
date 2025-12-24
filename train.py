@@ -7,7 +7,7 @@ if __name__ == '__main__':
     model = YOLO('ultralytics/cfg/models/11improve/yolo11-SABER.yaml')
     
     #model.load('yolo11n.pt') # loading pretrain weights
-    model.train(data='D:/Yolo/ultralytics-yolo11-20250624/ultralytics-yolo11-main/dataset/data.yaml',
+    model.train(data='home/SABER/dataset/data.yaml',
                 cache=False,
                 imgsz=640,
                 epochs=200,
