@@ -76,7 +76,7 @@ edit `train.py` file：
 # Load model (from configuration file or pre-trained weights)
 model = YOLO('ultralytics/cfg/models/11/yolo11n.yaml')
 
-# 开始训练
+# start train
 model.train(
     data='dataset/data.yaml',    # Path to dataset configuration file
     epochs=200,                  
@@ -94,7 +94,7 @@ model.train(
 )
 ```
 
-运行训练：
+Run train：
 
 ```bash
 python train.py
