@@ -1,0 +1,11 @@
+# dataset path
+path: /home/ultralytics-yolo11-main/
+train: ./dataset/SSDD/images/train  # path + exp
+val: ./dataset/SSDD/images/val # path + val
+test: ./dataset/SSDD/images/test # path + test
+
+# number of classes
+nc: 1
+
+# class names
+names: ['ship']
