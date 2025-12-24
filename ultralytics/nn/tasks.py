@@ -463,7 +463,7 @@ class DetectionModel(BaseModel):
             LOGGER.info("")
 
     def _predict_augment(self, x):
-        """Perform augmentations on input image x and return augmented inference and exp outputs."""
+        """Perform augmentations on input image x and return augmented inference and train outputs."""
         if getattr(self, "end2end", False) or self.__class__.__name__ != "DetectionModel":
             LOGGER.warning("WARNING ⚠️ Model does not support 'augment=True', reverting to single-scale prediction.")
             return self._predict_once(x)
@@ -477,7 +477,7 @@ class DetectionModel(BaseModel):
             yi = self._descale_pred(yi, fi, si, img_size)
             y.append(yi)
         y = self._clip_augmented(y)  # clip augmented tails
-        return torch.cat(y, -1), None  # augmented inference, exp
+        return torch.cat(y, -1), None  # augmented inference, train
 
     @staticmethod
     def _descale_pred(p, flips, scale, img_size, dim=1):
@@ -821,7 +821,7 @@ class Ensemble(nn.ModuleList):
         # y = torch.stack(y).max(0)[0]  # max ensemble
         # y = torch.stack(y).mean(0)  # mean ensemble
         y = torch.cat(y, 2)  # nms ensemble, y shape(B, HW, C)
-        return y, None  # inference, exp output
+        return y, None  # inference, train output
 
 
 # Functions ------------------------------------------------------------------------------------------------------------
@@ -965,14 +965,14 @@ def torch_safe_load(weight, safe_only=False):
                     f"ERROR ❌️ {weight} appears to be an Ultralytics YOLOv5 model originally trained "
                     f"with https://github.com/ultralytics/yolov5.\nThis model is NOT forwards compatible with "
                     f"YOLOv8 at https://github.com/ultralytics/ultralytics."
-                    f"\nRecommend fixes are to exp a new model using the latest 'ultralytics' package or to "
+                    f"\nRecommend fixes are to train a new model using the latest 'ultralytics' package or to "
                     f"run a command with an official Ultralytics model, i.e. 'yolo predict model=yolov8n.pt'"
                 )
             ) from e
         LOGGER.warning(
             f"WARNING ⚠️ {weight} appears to require '{e.name}', which is not in Ultralytics requirements."
             f"\nAutoInstall will run now for '{e.name}' but this feature will be removed in the future."
-            f"\nRecommend fixes are to exp a new model using the latest 'ultralytics' package or to "
+            f"\nRecommend fixes are to train a new model using the latest 'ultralytics' package or to "
             f"run a command with an official Ultralytics model, i.e. 'yolo predict model=yolov8n.pt'"
         )
         check_requirements(e.name)  # install missing module
