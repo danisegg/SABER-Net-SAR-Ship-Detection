@@ -1,8 +1,9 @@
 # Enhanced SAR Ship Detection through Structure-Aware and Boundary-Enhanced Network
-This repository contains the official implementation for the manuscript ‘Enhanced SAR Ship Detection through Structure-Aware and Boundary-Enhanced Network’ submitted to The Visual Computer.”
+This repository serves as the official open-source implementation of the manuscript titled **"Enhanced SAR Ship Detection through Structure-Aware and Boundary-Enhanced Network"**.
 
 Our work proposes SABER-Net, a structure-aware and boundary-enhanced network designed to address the challenges of ship detection in SAR images.
 
+This manuscript has been submitted to **The Visual Computer** (Springer) for review. The code provided here is intended to enhance the transparency and reproducibility of our research, allowing readers to replicate our experiments and evaluate the results discussed in the paper.
 <details open>
     
 ### 0. Environment Setup
