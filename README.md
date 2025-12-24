@@ -10,7 +10,7 @@ Our work proposes SABER-Net, a structure-aware and boundary-enhanced network des
     ```
 
 2.  **Install PyTorch:**
-    Please install PyTorch first by following the official instructions from [pytorch.org](https://pytorch.org/) to match your specific hardware (CUDA version or CPU). For example, for CUDA 12.1, the command might be:
+    Please install PyTorch first by following the official instructions from [pytorch.org](https://pytorch.org/) to match your specific hardware (CUDA version or CPU). 
     ```bash
     pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
     ```
